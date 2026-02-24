@@ -43,6 +43,40 @@ Output: `dist/M4B-Builder.exe`
 Use the workflow at `.github/workflows/build-desktop.yml`.
 It builds on `macos-latest` and uploads a `M4B-Builder-macos` artifact.
 
+## Download Executables From GitHub
+
+1. Open the repository on GitHub: `https://github.com/alfredtp22/M4B-Builder`.
+2. Click `Actions`.
+3. Open the latest successful `Build Desktop App` workflow run on the `main` branch.
+4. In `Artifacts`, download:
+   - `M4B-Builder-windows` (contains `M4B-Builder.exe`)
+   - `M4B-Builder-macos` (contains `M4B-Builder`)
+
+## Run Executables
+
+### Windows
+1. Unzip `M4B-Builder-windows.zip`.
+2. Run `M4B-Builder.exe`.
+3. If SmartScreen appears, click `More info` -> `Run anyway`.
+4. Make sure `ffmpeg` and `ffprobe` are installed, or use the app's `Set FFmpeg` button.
+
+### macOS
+1. Unzip `M4B-Builder-macos.zip`.
+2. Open Terminal in the extracted folder.
+3. Make executable and run:
+
+```bash
+chmod +x M4B-Builder
+./M4B-Builder
+```
+
+4. If macOS blocks the first run, remove quarantine and retry:
+
+```bash
+xattr -d com.apple.quarantine M4B-Builder
+./M4B-Builder
+```
+
 ## Notes
 - The exported `.m4b` uses the artwork of the first selected file.
 - Chapter titles default to each file's title tag when available, otherwise filename.
