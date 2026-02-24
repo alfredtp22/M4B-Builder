@@ -28,6 +28,21 @@ pip install -r requirements.txt
 python -m audiobook_builder
 ```
 
+## Build
+
+### Windows (local)
+
+```powershell
+python -m pip install -r requirements.txt pyinstaller
+pyinstaller --noconfirm --clean --windowed --onefile --name M4B-Builder audiobook_builder/__main__.py
+```
+
+Output: `dist/M4B-Builder.exe`
+
+### macOS (recommended via GitHub Actions)
+Use the workflow at `.github/workflows/build-desktop.yml`.
+It builds on `macos-latest` and uploads a `M4B-Builder-macos` artifact.
+
 ## Notes
 - The exported `.m4b` uses the artwork of the first selected file.
 - Chapter titles default to each file's title tag when available, otherwise filename.
