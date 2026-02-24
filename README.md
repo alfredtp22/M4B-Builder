@@ -34,7 +34,7 @@ python -m audiobook_builder
 
 ```powershell
 python -m pip install -r requirements.txt pyinstaller
-pyinstaller --noconfirm --clean --windowed --onefile --name M4B-Builder audiobook_builder/__main__.py
+pyinstaller --noconfirm --clean --windowed --onefile --name M4B-Builder audiobook_builder/app.py
 ```
 
 Output: `dist/M4B-Builder.exe`

@@ -31,7 +31,7 @@ jobs:
 
       - name: Build app
         run: |
-          pyinstaller --noconfirm --clean --windowed --onefile --name M4B-Builder audiobook_builder/__main__.py
+          pyinstaller --noconfirm --clean --windowed --onefile --name M4B-Builder audiobook_builder/app.py
 
       - name: Package artifact (Windows)
         if: runner.os == 'Windows'
